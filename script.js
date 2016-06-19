@@ -8,6 +8,7 @@
 var loadingTexts = [
   'Initierar världstid',
   'Kvantumsamplar tidszonerna',
+  'Laddar resultat',
 ];
 
 /**
@@ -98,11 +99,14 @@ loadYoutubeApi();
  * @param {Object} e event object from the animation events
  */
 function loadingListener(e) {
-  loadingEl.innerText = e.elapsedTime % 4 === 0
-    ? loadingTexts[0]
-    : loadingTexts[1];
+  var loadingIndex = !!~loadingTexts.indexOf(loadingEl.innerText)
+    ? loadingTexts.indexOf(loadingEl.innerText) + 1
+    : 0;
+  loadingEl.innerText = loadingTexts[loadingIndex % loadingTexts.length];
 
-  if ((typeof player !== 'undefined' || !isFriday()) && e.elapsedTime >= 4) {
+  console.log(e.elapsedTime, loadingEl.innerText);
+
+  if ((typeof player !== 'undefined' || !isFriday()) && e.elapsedTime >= (loadingTexts.length * 2)) {
     hideLoading();
   }
 }
