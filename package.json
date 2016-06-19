@@ -1,0 +1,21 @@
+{
+  "name": "is_friday",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Kristoffer Östlund",
+  "license": "ISC",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristofferostlund/is_friday.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kristofferostlund/is_friday/issues"
+  },
+  "homepage": "https://github.com/kristofferostlund/is_friday#readme",
+  "description": ""
+}
